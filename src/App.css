@@ -1,0 +1,36 @@
+.App {
+    background: linear-gradient(88deg, #101010, #101010);
+    background-size: 600% 600%;
+    height: 100vh;
+    -webkit-animation: AnimationName 19s ease infinite;
+    -moz-animation: AnimationName 19s ease infinite;
+    animation: AnimationName 19s ease infinite;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+}
+
+/* Center the MainSection between the TopAppBar and Footer */
+.main-section-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Adjust the height to account for header/footer if needed */
+    height: calc(100vh - 200px);
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 38%}
+    50%{background-position:100% 63%}
+    100%{background-position:0% 38%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 38%}
+    50%{background-position:100% 63%}
+    100%{background-position:0% 38%}
+}
+@keyframes AnimationName { 
+    0%{background-position:0% 38%}
+    50%{background-position:100% 63%}
+    100%{background-position:0% 38%}
+}

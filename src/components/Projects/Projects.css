@@ -1,0 +1,16 @@
+.Projects {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0px;
+    color: white !important;
+}
+
+.Projects-title {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.Typewriter {
+    padding: 0 !important;
+}
