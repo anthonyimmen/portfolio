@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './TopAppBar.css';
 import { List } from 'react-bootstrap-icons';
 
@@ -11,16 +12,16 @@ const TopAppBar = () => {
 
     return (
         <header className="top-app-bar">
-            <div className="app-logo">
+            <Link to="/" className="app-logo">
                 ai
-            </div>
+            </Link>
             <button className="hamburger" onClick={toggleMenu}>
                 <List size={30} color="white" />
             </button>
             <nav className={`app-nav ${menuOpen ? 'active' : ''}`}>
-                <a href="#home">Home</a>
-                <a href="#projects">About</a>
-                <a href="#contact">Contact</a>
+                <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
+                <Link to="/about" onClick={() => setMenuOpen(false)}>About</Link>
+                <Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
             </nav>
         </header>
     );

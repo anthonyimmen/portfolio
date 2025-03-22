@@ -1,4 +1,4 @@
-import { Github, Linkedin, Instagram } from 'react-bootstrap-icons';
+import { Github, Linkedin, Twitter} from 'react-bootstrap-icons';
 import './Footer.css';
 
 export const Footer = () => {
@@ -6,7 +6,7 @@ export const Footer = () => {
         <div className="Footer">
             <Linkedin color="white" size={30} />
             <Github color="white" size={30} />
-            <Instagram color="white" size={30} />
+            <Twitter color="white" size={30} />
         </div>
     );
 };

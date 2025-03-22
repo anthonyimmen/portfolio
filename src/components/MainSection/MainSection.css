@@ -55,7 +55,7 @@
 @media (max-width: 768px) {
     .main-section {
         flex-direction: column-reverse;
-        gap: 2rem;
+        gap: 4rem;
         padding: 1rem;
         text-align: center;
     }
