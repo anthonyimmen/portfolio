@@ -4,6 +4,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 25px 60px;
+  position: relative;
 }
 
 .app-logo {
@@ -29,5 +30,47 @@
 .app-nav a:hover {
   box-shadow: inset 0 -5px 0 0 #EBD4A2;
   color: #fff;
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+@media (max-width: 768px) {
+  .top-app-bar {
+    padding: 15px 20px;
+  }
+
+  .app-logo {
+    font-size: 20px;
+  }
+
+  .hamburger {
+    display: block;
+    z-index: 1000;
+  }
+
+  .app-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(16, 16, 16, 0.95);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    font-size: 24px;
+  }
+
+  .app-nav.active {
+    display: flex;
+  }
 }
 

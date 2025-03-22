@@ -54,10 +54,34 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .main-section {
-        flex-direction: column;
+        flex-direction: column-reverse;
+        gap: 2rem;
+        padding: 1rem;
+        text-align: center;
     }
+
+    .main-content {
+        align-items: center;
+    }
+
+    .headliner {
+        font-size: 1.3rem;
+    }
+
+    .name {
+        font-size: 2.5rem;
+    }
+
+    .work-title {
+        font-size: 1.8rem;
+    }
+
+    .interests {
+        font-size: 1.2rem;
+    }
+
     .photo {
-        width: 80%;
+        width: 200px;
     }
 }
 
