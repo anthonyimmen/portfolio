@@ -17,7 +17,7 @@
 
 .headliner {
     font-size: 1.7rem; /* increased from 1.2rem */
-    color: #cfd7ac
+    color: #aabca6
     /* additional styling */
 }
 
@@ -48,7 +48,7 @@
     width: 300px; /* adjust as needed */
     height: auto;
     border-radius: 200px;  /* Added border radius for rounded corners */
-    box-shadow: 0 0 15px #cfd7ac;  /* Added glow effect */
+    box-shadow: 0 0 15px #aabca6;  /* Added glow effect */
 }
     
 /* Responsive adjustments */

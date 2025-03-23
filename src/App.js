@@ -1,7 +1,7 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MainSection from './components/MainSection/MainSection';
-import About from './components/About/About';
+import About from './components/About/About.tsx';
 import Contact from './components/Contact/Contact';
 import TopAppBar from './components/TopBar/TopAppBar';
 import { Footer } from './components/Footer/Footer';

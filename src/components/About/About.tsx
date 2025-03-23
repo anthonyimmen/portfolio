@@ -21,7 +21,7 @@ const About = () => {
             id: 1,
             title: "Portfolio Website",
             shortDescription: "Personal portfolio built with React",
-            longDescription: "A modern, responsive portfolio website built using React and TypeScript. Features include dynamic routing, animated components, and responsive design.",
+            longDescription: "A modern, responsive portfolio website built using React and Javascript. Features include dynamic routing, animated components, and responsive design.",
             technologies: ["React", "TypeScript", "CSS"],
             image: "/portfolio-preview.png",
             githubLink: "https://github.com/yourusername/portfolio"
@@ -36,7 +36,7 @@ const About = () => {
                     onInit={(typewriter) => {
                         typewriter
                             .start()
-                            .typeString("about_me();")
+                            .typeString("about")
                             .pauseFor(1000)
                     }}
                 />
@@ -47,19 +47,7 @@ const About = () => {
                     functional, and user-friendly applications. With expertise in both frontend
                     and backend development, I enjoy bringing ideas to life through code.
                 </p>
-                <div className="skills-section">
-                    <h3>Technologies I work with:</h3>
-                    <div className="skills-grid">
-                        <div className="skill-item">JavaScript/TypeScript</div>
-                        <div className="skill-item">React</div>
-                        <div className="skill-item">Node.js</div>
-                        <div className="skill-item">Python</div>
-                        <div className="skill-item">SQL</div>
-                        <div className="skill-item">AWS</div>
-                    </div>
-                </div>
-                
-                <div className="projects-section">
+                 <div className="projects-section">
                     <h3>Featured Projects</h3>
                     <div className="projects-grid">
                         {projects.map(project => (
@@ -74,6 +62,17 @@ const About = () => {
                         ))}
                     </div>
                 </div>
+                <div className="skills-section">
+                    <h3>Technologies I work with:</h3>
+                    <div className="skills-grid">
+                        <div className="skill-item">JavaScript/TypeScript</div>
+                        <div className="skill-item">React</div>
+                        <div className="skill-item">Node.js</div>
+                        <div className="skill-item">Python</div>
+                        <div className="skill-item">SQL</div>
+                        <div className="skill-item">AWS</div>
+                    </div>
+                </div>
             </div>
 
             {/* Project Overlay */}
@@ -86,7 +85,7 @@ const About = () => {
                         >
                             ×
                         </button>
-                        <h2>{selectedProject.title}</h2>
+                        <h1>{selectedProject.title}</h1>
                         <img 
                             src={selectedProject.image} 
                             alt={selectedProject.title}

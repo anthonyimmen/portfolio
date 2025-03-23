@@ -11,6 +11,7 @@
   font-size: 24px;
   color: #fff;
   font-weight: 600;
+  text-decoration: none;
 }
 
 .app-nav {
@@ -28,7 +29,7 @@
 }
 
 .app-nav a:hover {
-  box-shadow: inset 0 -5px 0 0 #EBD4A2;
+  box-shadow: inset 0 -5px 0 0 #aabca6;
   color: #fff;
 }
 
