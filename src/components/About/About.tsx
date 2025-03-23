@@ -11,23 +11,56 @@ interface Project {
     image: string;
     liveLink?: string;
     githubLink?: string;
+    websiteLink?: string;
+    demoVideo?: string;
 }
 
 const About = () => {
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+    const [showVideoDemo, setShowVideoDemo] = useState(false);
 
     const projects: Project[] = [
         {
             id: 1,
-            title: "Portfolio Website",
-            shortDescription: "Personal portfolio built with React",
+            title: "goal.",
+            shortDescription: "Goal is a productivity app that is meant to improve your day-to-day life and help you reach your goals.",
+            longDescription: "Goal enables users to intentionally create to-do lists limited to their most important daily task. Includes a custom authentication service, profile page, a motivational quote display, a list of completed goals, and a GitHub-like daily tracker.",
+            technologies: ["React Native", "TypeScript", "Express.js", "AWS", "SQL", "MongoDB", "CSS", "Figma", "UI/UX"],
+            image: "/goal-icon.png",
+            demoVideo: "/goal_demo.mp4",
+            liveLink: "https://www.goalapp.io",
+            websiteLink: "https://www.goalapp.io"
+        },
+        {
+            id: 2,
+            title: "Portfolio",
+            shortDescription: "My personal portfolio built with React.",
             longDescription: "A modern, responsive portfolio website built using React and Javascript. Features include dynamic routing, animated components, and responsive design.",
             technologies: ["React", "TypeScript", "CSS"],
-            image: "/portfolio-preview.png",
-            githubLink: "https://github.com/yourusername/portfolio"
+            image: "/portfolio-icon.png",
+            githubLink: "https://github.com/anthonyimmen/portfolio",
+            websiteLink: "https://www.anthonyimmenschuh.com"
+        },
+        {
+            id: 3,
+            title: "Airbnb Clone",
+            shortDescription: "A clone of the Airbnb application.",
+            longDescription: "A modern, responsive portfolio website built using React and Javascript. Features include dynamic routing, animated components, and responsive design.",
+            technologies: ["React Native", "TypeScript", "CSS"],
+            image: "/airbnb-logo.png",
+            githubLink: "https://github.com/anthonyimmen/airbnb-clone"
         },
         // Add more projects here
     ];
+
+    const handleLiveDemoClick = (e: React.MouseEvent, project: Project) => {
+        e.preventDefault();
+        if (project.demoVideo) {
+            setShowVideoDemo(true);
+        } else {
+            window.open(project.liveLink, '_blank');
+        }
+    };
 
     return (
         <div className="about-container">
@@ -43,9 +76,9 @@ const About = () => {
             </div>
             <div className="about-content">
                 <p className="about-text">
-                    I'm a full-stack software engineer with a passion for creating beautiful,
-                    functional, and user-friendly applications. With expertise in both frontend
-                    and backend development, I enjoy bringing ideas to life through code.
+                    I'm a full-stack software engineer currently at JPMorgan Chase & Co with a passion for creating beautiful,
+                    functional, and user-friendly applications. With expertise in both UI/UX, frontend
+                    , and backend development, I enjoy creating new solutions from scratch.
                 </p>
                  <div className="projects-section">
                     <h3>Featured Projects</h3>
@@ -67,10 +100,13 @@ const About = () => {
                     <div className="skills-grid">
                         <div className="skill-item">JavaScript/TypeScript</div>
                         <div className="skill-item">React</div>
+                        <div className="skill-item">React Native</div>
                         <div className="skill-item">Node.js</div>
                         <div className="skill-item">Python</div>
                         <div className="skill-item">SQL</div>
                         <div className="skill-item">AWS</div>
+                        <div className="skill-item">Java</div>
+                        <div className="skill-item">Springboot</div>
                     </div>
                 </div>
             </div>
@@ -85,12 +121,14 @@ const About = () => {
                         >
                             ×
                         </button>
-                        <h1>{selectedProject.title}</h1>
-                        <img 
-                            src={selectedProject.image} 
-                            alt={selectedProject.title}
-                            className="project-image"
-                        />
+                        <div className="project-modal-title">
+                            <img 
+                                src={selectedProject.image} 
+                                alt={selectedProject.title}
+                                className="project-image"
+                            />
+                            <h1>{selectedProject.title}</h1>    
+                        </div>              
                         <p className="project-description">
                             {selectedProject.longDescription}
                         </p>
@@ -103,6 +141,7 @@ const About = () => {
                             {selectedProject.liveLink && (
                                 <a 
                                     href={selectedProject.liveLink}
+                                    onClick={(e) => handleLiveDemoClick(e, selectedProject)}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="project-link"
@@ -117,10 +156,42 @@ const About = () => {
                                     rel="noopener noreferrer"
                                     className="project-link"
                                 >
-                                    GitHub
+                                    Github
+                                </a>
+                            )}
+                            {selectedProject.websiteLink && (
+                                <a 
+                                    href={selectedProject.websiteLink}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="project-link"
+                                >
+                                    Website
                                 </a>
                             )}
                         </div>
+                    </div>
+                </div>
+            )}
+
+            {/* Add Video Demo Overlay */}
+            {showVideoDemo && selectedProject?.demoVideo && (
+                <div className="video-overlay" onClick={() => setShowVideoDemo(false)}>
+                    <div className="video-modal" onClick={e => e.stopPropagation()}>
+                        <button 
+                            className="close-button"
+                            onClick={() => setShowVideoDemo(false)}
+                        >
+                            ×
+                        </button>
+                        <video 
+                            controls 
+                            autoPlay 
+                            className="demo-video"
+                        >
+                            <source src={selectedProject.demoVideo} type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
                 </div>
             )}

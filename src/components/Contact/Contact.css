@@ -8,7 +8,7 @@
 .contact-title {
     font-size: 2.5rem;
     margin-bottom: 2rem;
-    color: #aabca6;
+    color: #838e95;
 }
 
 .contact-content {
@@ -50,17 +50,17 @@
 
 .submit-btn {
     padding: 1rem 2rem;
-    background: #aabca6;
+    background: #838e95;
     border: none;
     border-radius: 8px;
-    color: #101010;
+    color: #0a0a0a;
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .submit-btn:hover {
-    background: #aabca6;
+    background: #838e95;
     transform: translateY(-2px);
 }
 

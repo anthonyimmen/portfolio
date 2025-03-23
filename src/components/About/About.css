@@ -27,7 +27,7 @@
 }
 
 .skills-section h3 {
-    color: #aabca6;
+    color: #838e95;
     margin-bottom: 1rem;
 }
 
@@ -57,7 +57,7 @@
 }
 
 .projects-section h3 {
-    color: #aabca6;
+    color: #838e95;
     margin-bottom: 1.5rem;
 }
 
@@ -82,7 +82,7 @@
 }
 
 .project-item h4 {
-    color: hsl(108, 9%, 57%);
+    color: #838e95;
     margin-bottom: 0.5rem;
 }
 
@@ -112,6 +112,16 @@
     position: relative;
 }
 
+.project-modal-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: auto;
+    max-width: 300px;
+    align-items: center;
+    gap: 1rem;
+}
+
 .close-button {
     position: absolute;
     top: 1rem;
@@ -126,10 +136,10 @@
 }
 
 .project-image {
-    width: 100%;
-    height: auto;
+    width: 50px;
+    height: 50px;
     border-radius: 8px;
-    margin: 1rem 0;
+    margin: 1rem;
 }
 
 .project-description {
@@ -142,7 +152,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin: 1rem 0;
+    margin: 2.5rem 0;
     font-size: 1.5rem;
 }
 
@@ -155,12 +165,12 @@
 .project-links {
     display: flex;
     gap: 1rem;
-    margin-top: 1.5rem;
+    margin-top: 2rem;
 }
 
 .project-link {
-    background:#aabca6;
-    color: #101010;
+    background:#838e95;
+    color: #0a0a0a;
     padding: 0.75rem 1.5rem;
     border-radius: 6px;
     text-decoration: none;
@@ -170,8 +180,54 @@
 }
 
 .project-link:hover {
-    background: #aabca6;
+    background: #838e95;
     transform: translateY(-2px);
+    text-decoration: none;
+}
+
+/* Video Overlay Styles */
+.video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1100; /* Higher than project modal */
+    padding: 20px;
+}
+
+.video-modal {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    background: #1a1a1a;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.demo-video {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    border-radius: 8px;
+}
+
+/* Make sure close button is visible on video */
+.video-modal .close-button {
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    border-radius: 50%;
+    background-color:#1a1a1a;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 @media (max-width: 768px) {
@@ -202,5 +258,15 @@
 
     .project-link {
         text-align: center;
+    }
+
+    .video-modal {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .video-modal .close-button {
+        top: -30px;
+        right: 0;
     }
 }

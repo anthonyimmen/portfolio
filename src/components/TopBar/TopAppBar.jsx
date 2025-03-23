@@ -13,7 +13,11 @@ const TopAppBar = () => {
     return (
         <header className="top-app-bar">
             <Link to="/" className="app-logo">
-                ai
+                <img 
+                    src={'./portfolio-icon.png'} 
+                    alt="App Icon"
+                    className="app-icon-image"
+                />
             </Link>
             <button className="hamburger" onClick={toggleMenu}>
                 <List size={30} color="white" />
