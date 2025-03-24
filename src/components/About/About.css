@@ -26,7 +26,7 @@
     margin-top: 2rem;
 }
 
-.skills-section h3 {
+.skills-section h2 {
     color: #838e95;
     margin-bottom: 1rem;
 }
@@ -56,7 +56,7 @@
     margin-top: 3rem;
 }
 
-.projects-section h3 {
+.projects-section h2 {
     color: #838e95;
     margin-bottom: 1.5rem;
 }
@@ -222,7 +222,6 @@
     top: -40px;
     right: -40px;
     border-radius: 50%;
-    background-color:#1a1a1a;
     width: 40px;
     height: 40px;
     display: flex;
@@ -232,11 +231,15 @@
 
 @media (max-width: 768px) {
     .about-container {
-        padding: 1rem;
+        padding: 2rem;
     }
 
     .about-title {
-        font-size: 2rem;
+        font-size: 3rem;
+    }
+
+    .about-text {
+        font-size: 1.75rem;
     }
 
     .skills-grid {
@@ -266,7 +269,7 @@
     }
 
     .video-modal .close-button {
-        top: -30px;
-        right: 0;
+        top: -40px;
+        right: -10px;
     }
 }

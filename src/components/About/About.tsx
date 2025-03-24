@@ -47,6 +47,7 @@ const About = () => {
             shortDescription: "A clone of the Airbnb application.",
             longDescription: "A modern, responsive portfolio website built using React and Javascript. Features include dynamic routing, animated components, and responsive design.",
             technologies: ["React Native", "TypeScript", "CSS"],
+            demoVideo: "/airbnb_demo.mp4",
             image: "/airbnb-logo.png",
             githubLink: "https://github.com/anthonyimmen/airbnb-clone"
         },
@@ -62,6 +63,8 @@ const About = () => {
         }
     };
 
+    // TODO: make all the skills be their logos instead
+
     return (
         <div className="about-container">
             <div className="about-title">
@@ -76,12 +79,14 @@ const About = () => {
             </div>
             <div className="about-content">
                 <p className="about-text">
-                    I'm a full-stack software engineer currently at JPMorgan Chase & Co with a passion for creating beautiful,
-                    functional, and user-friendly applications. With expertise in both UI/UX, frontend
-                    , and backend development, I enjoy creating new solutions from scratch.
+                    Currently a full-stack engineer at JPMorgan Chase & Co with a passion for creating aesthetic,
+                    functional, and user-friendly applications. Experienced in frontend, backend, and UI/UX development. 
+                    I enjoy creating new solutions from scratch and also improving existing systems. 
+                    My goal is to deliver quality software that solves real-world problems and provides value 
+                    to the overall end user.
                 </p>
                  <div className="projects-section">
-                    <h3>Featured Projects</h3>
+                    <h2>Featured Projects</h2>
                     <div className="projects-grid">
                         {projects.map(project => (
                             <div 
@@ -96,7 +101,7 @@ const About = () => {
                     </div>
                 </div>
                 <div className="skills-section">
-                    <h3>Technologies I work with:</h3>
+                    <h2>Technologies I work with:</h2>
                     <div className="skills-grid">
                         <div className="skill-item">JavaScript/TypeScript</div>
                         <div className="skill-item">React</div>
@@ -138,9 +143,9 @@ const About = () => {
                             ))}
                         </div>
                         <div className="project-links">
-                            {selectedProject.liveLink && (
+                            {selectedProject.demoVideo && (
                                 <a 
-                                    href={selectedProject.liveLink}
+                                    href=""
                                     onClick={(e) => handleLiveDemoClick(e, selectedProject)}
                                     target="_blank"
                                     rel="noopener noreferrer"
