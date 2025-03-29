@@ -79,10 +79,10 @@ const About = () => {
             </div>
             <div className="about-content">
                 <p className="about-text">
-                    Currently a full-stack engineer at JPMorgan Chase & Co with a passion for creating aesthetic,
-                    functional, and user-friendly applications. Experienced in frontend, backend, and UI/UX development. 
+                    Currently @ JPMorganChase with a passion for creating aesthetic and
+                    functional applications. Experienced in frontend, backend, and UI/UX development. 
                     I enjoy creating new solutions from scratch and also improving existing systems. 
-                    My goal is to deliver quality software that solves real-world problems and provides value 
+                    My goal is to deliver quality software that solves real-world problems to provide value 
                     to the overall end user.
                 </p>
                  <div className="projects-section">
@@ -112,6 +112,10 @@ const About = () => {
                         <div className="skill-item">AWS</div>
                         <div className="skill-item">Java</div>
                         <div className="skill-item">Springboot</div>
+                        <div className="skill-item">C++</div>
+                        <div className="skill-item">C</div>
+                        <div className="skill-item">Figma</div>
+                        <div className="skill-item">UI/UX</div>
                     </div>
                 </div>
             </div>
