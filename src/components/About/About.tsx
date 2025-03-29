@@ -79,9 +79,9 @@ const About = () => {
             </div>
             <div className="about-content">
                 <p className="about-text">
-                    Currently @ JPMorganChase with a passion for creating aesthetic and
-                    functional applications. Experienced in frontend, backend, and UI/UX development. 
-                    I enjoy creating new solutions from scratch and also improving existing systems. 
+                    Currently @ JPMorganChase. Has a passion for creating aesthetic and
+                    functional applications. Experienced in frontend, backend, & UI/UX development. 
+                    Enjoy creating new solutions from scratch & also improving existing systems. 
                     My goal is to deliver quality software that solves real-world problems to provide value 
                     to the overall end user.
                 </p>

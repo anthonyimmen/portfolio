@@ -7,7 +7,7 @@ const MainSection = () => {
         <div className="main-section">
             <div className="main-content">
                 <div className="headliner">
-                    yo, welcome to my personal website. i'm
+                    welcome to my personal website. i'm
                 </div>
                 <div className="name">
                     Anthony Immenschuh
