@@ -40,7 +40,7 @@ const About = () => {
             id: 2,
             title: "Portfolio",
             shortDescription: "My personal portfolio built with React.",
-            longDescription: "A modern, responsive portfolio website built using React and Javascript. Features include dynamic routing, animated components, and responsive design.",
+            longDescription: "A modern, responsive portfolio website built using React and Javascript. Features include dynamic routing, analytics, animated components, and responsive design.",
             technologies: ["React", "TypeScript", "CSS"],
             image: "/portfolio-icon.png",
             githubLink: "https://github.com/anthonyimmen/portfolio",
