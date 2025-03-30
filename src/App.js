@@ -5,10 +5,14 @@ import About from './components/About/About.tsx';
 import Contact from './components/Contact/Contact';
 import TopAppBar from './components/TopBar/TopAppBar';
 import { Footer } from './components/Footer/Footer';
+import { inject } from '@vercel/analytics';
 
 const AppContent = () => {
   const location = useLocation();
   const showFooter = location.pathname !== '/contact';
+
+  // Analytics
+  inject();
 
   return (
     <div className="App">
