@@ -15,6 +15,11 @@ interface Project {
     demoVideo?: string;
 }
 
+interface Skill {
+    name: string;
+    icon: string;
+}
+
 const About = () => {
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
     const [showVideoDemo, setShowVideoDemo] = useState(false);
@@ -52,6 +57,21 @@ const About = () => {
             githubLink: "https://github.com/anthonyimmen/airbnb-clone"
         },
         // Add more projects here
+    ];
+
+    const skills: Skill[] = [
+        { name: 'JavaScript', icon: 'devicon-javascript-plain' },
+        { name: 'TypeScript', icon: 'devicon-typescript-plain' },
+        { name: 'React / React Native', icon: 'devicon-react-original' },
+        { name: 'Node.js', icon: 'devicon-nodejs-plain-wordmark' },
+        { name: 'Python', icon: 'devicon-python-plain' },
+        { name: 'SQL', icon: 'devicon-azuresqldatabase-plain' },
+        { name: 'AWS', icon: 'devicon-amazonwebservices-plain-wordmark' },
+        { name: 'Java', icon: 'devicon-java-plain' },
+        { name: 'Spring', icon: 'devicon-spring-original-wordmark' },
+        { name: 'C++', icon: 'devicon-cplusplus-plain' },
+        { name: 'C', icon: 'devicon-c-plain' },
+        { name: 'Figma', icon: 'devicon-figma-plain' }
     ];
 
     const handleLiveDemoClick = (e: React.MouseEvent, project: Project) => {
@@ -103,19 +123,11 @@ const About = () => {
                 <div className="skills-section">
                     <h2>Technologies I work with:</h2>
                     <div className="skills-grid">
-                        <div className="skill-item">JavaScript/TypeScript</div>
-                        <div className="skill-item">React</div>
-                        <div className="skill-item">React Native</div>
-                        <div className="skill-item">Node.js</div>
-                        <div className="skill-item">Python</div>
-                        <div className="skill-item">SQL</div>
-                        <div className="skill-item">AWS</div>
-                        <div className="skill-item">Java</div>
-                        <div className="skill-item">Springboot</div>
-                        <div className="skill-item">C++</div>
-                        <div className="skill-item">C</div>
-                        <div className="skill-item">Figma</div>
-                        <div className="skill-item">UI/UX</div>
+                        {skills.map((skill) => (
+                            <div key={skill.name} className="skill-item">
+                                <i className={skill.icon}/>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>

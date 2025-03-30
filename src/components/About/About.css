@@ -33,23 +33,34 @@
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 2fr));
     gap: 1rem;
     margin-top: 1rem;
 }
 
 .skill-item {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 1rem;
+    background: #1a1a1a;
+    padding: 1.5rem;
     border-radius: 8px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
     transition: all 0.3s ease;
-    font-size: 1.5rem;
+    font-size: 40px;
+    height: 100;
+    width: 100;
 }
 
 .skill-item:hover {
     background: rgba(184, 184, 184, 0.2);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+}
+
+.skill-name {
+    font-size: 0.9rem;
+    color: #fff;
+    text-align: center;
 }
 
 .projects-section {
@@ -271,5 +282,14 @@
     .video-modal .close-button {
         top: -40px;
         right: -10px;
+    }
+
+    .skill-item svg {
+        width: 100px;
+        height: 100px;
+    }
+
+    .skill-name {
+        font-size: 0.8rem;
     }
 }
