@@ -83,8 +83,6 @@ const About = () => {
         }
     };
 
-    // TODO: make all the skills be their logos instead
-
     return (
         <div className="about-container">
             <div className="about-title">
