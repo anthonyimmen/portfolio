@@ -125,7 +125,10 @@ const About = () => {
                     <div className="skills-grid">
                         {skills.map((skill) => (
                             <div key={skill.name} className="skill-item">
-                                <i className={skill.icon}/>
+                                <div className="skill-content">
+                                    <i className={skill.icon}/>
+                                    <span className="skill-name">{skill.name}</span>
+                                </div>
                             </div>
                         ))}
                     </div>
