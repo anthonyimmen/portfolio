@@ -47,6 +47,7 @@
   border: none;
   cursor: pointer;
   padding: 0;
+  z-index: 1010;
 }
 
 @media (max-width: 768px) {
@@ -61,7 +62,7 @@
 
   .hamburger {
     display: block;
-    z-index: 1000;
+    z-index: 1010;
   }
 
   .app-nav {
@@ -77,10 +78,12 @@
     align-items: center;
     gap: 2rem;
     font-size: 24px;
+    z-index: 1000;
   }
 
   .app-nav.active {
     display: flex;
+    z-index: 1000;
   }
 }
 
