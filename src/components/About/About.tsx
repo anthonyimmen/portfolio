@@ -168,7 +168,7 @@ const About = () => {
                                     rel="noopener noreferrer"
                                     className="project-link"
                                 >
-                                    Live Demo
+                                    Demo
                                 </a>
                             )}
                             {selectedProject.githubLink && (
