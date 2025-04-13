@@ -161,15 +161,12 @@ const About = () => {
                         </div>
                         <div className="project-links">
                             {selectedProject.demoVideo && (
-                                <a 
-                                    href=""
+                                <button 
                                     onClick={(e) => handleLiveDemoClick(e, selectedProject)}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
                                     className="project-link"
                                 >
                                     Demo
-                                </a>
+                                </button>
                             )}
                             {selectedProject.githubLink && (
                                 <a 

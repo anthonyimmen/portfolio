@@ -19,11 +19,12 @@ const Contact = () => {
             <div className="contact-content">
                 <p className="contact-text">
                     Feel free to reach out, always open to discussing new projects,
-                    creative ideas, or professional opportunites. You can reach me at any of my 
+                    creative ideas, feedback/support on my current projects, or professional opportunites. You can reach me at any of my 
                     socials below or via my email{' '}
                     <a 
                         href="mailto:anthonyimmen279@gmail.com" 
                         className="email-link"
+                        style={{ color: '#838e95' }}
                     >
                         anthonyimmen279@gmail.com
                     </a>
