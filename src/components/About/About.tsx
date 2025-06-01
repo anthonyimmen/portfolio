@@ -41,7 +41,7 @@ const About = () => {
             title: "Portfolio",
             shortDescription: "My personal portfolio built with React.",
             longDescription: "A modern, responsive portfolio website built using React and Javascript. Features include dynamic routing, analytics, animated components, and responsive design.",
-            technologies: ["React", "TypeScript", "CSS"],
+            technologies: ["React", "TypeScript", "CSS", "Vercel", "Figma"],
             image: "/portfolio-icon.png",
             githubLink: "https://github.com/anthonyimmen/portfolio",
             websiteLink: "https://www.anthonyimmenschuh.com"
@@ -97,29 +97,33 @@ const About = () => {
             </div>
             <div className="about-content">
                 <p className="about-text">
-                    Currently @ JPMorganChase. Has a passion for creating aesthetic and
-                    functional applications. Experienced in frontend, backend, & UI/UX development. 
-                    Enjoy creating new solutions from scratch & also improving existing systems. 
-                    My goal is to deliver quality software that solves real-world problems to provide value 
-                    to the overall end user.
+                    Currently @ JPMChase. Experienced in frontend, backend, & UI/UX development. 
+                    Building things...
                 </p>
                  <div className="projects-section">
-                    <h2>Featured Projects</h2>
+                    <h2>projects</h2>
                     <div className="projects-grid">
                         {projects.map(project => (
                             <div 
                                 key={project.id}
                                 className="project-item"
                                 onClick={() => setSelectedProject(project)}
-                            >
-                                <h4>{project.title}</h4>
+                            >   
+                                <div className='project-title-and-image'>
+                                    <img 
+                                        src={project.image} 
+                                        alt={project.title}
+                                        className="project-image-preview"
+                                    />
+                                    <h4>{project.title}</h4>
+                                </div>
                                 <p>{project.shortDescription}</p>
                             </div>
                         ))}
                     </div>
                 </div>
                 <div className="skills-section">
-                    <h2>Technologies I work with:</h2>
+                    <h2>tech</h2>
                     <div className="skills-grid">
                         {skills.map((skill) => (
                             <div key={skill.name} className="skill-item">

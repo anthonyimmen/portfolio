@@ -1,5 +1,4 @@
 import './MainSection.css'
-import Photo from './me.jpeg'
 import Typewriter from "typewriter-effect";
 
 const MainSection = () => {
@@ -26,9 +25,6 @@ const MainSection = () => {
                 <div className="interests">
                     with passions in ui/ux, music, coffee, and art.
                 </div>
-            </div>
-            <div className="photo-section">
-                <img className="photo" src={Photo} alt="Anthony Immenschuh"/>
             </div>
         </div>
     );

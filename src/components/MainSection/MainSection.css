@@ -2,8 +2,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10rem;
-    padding: 2rem;
+    gap: 0rem !important;
+    padding: 1rem;
     flex-wrap: wrap;
     color: white; /* corrected syntax */
 }
@@ -36,20 +36,6 @@
     font-size: 1.5rem; /* increased from 1rem */
     /* additional styling */
 }
-
-.photo-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.photo {
-    max-width: 100%;
-    width: 300px; /* adjust as needed */
-    height: auto;
-    border-radius: 200px;  /* Added border radius for rounded corners */
-    box-shadow: 0 0 15px #838e95;  /* Added glow effect */
-}
     
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -57,11 +43,12 @@
         flex-direction: column-reverse;
         gap: 4rem;
         padding: 1rem;
-        text-align: center;
     }
 
     .main-content {
-        align-items: center;
+        align-items: flex-start;  /* Changed from center to flex-start */
+        width: 100%;  /* Added to ensure full width */
+        padding: 0 1rem;  /* Added some padding on the sides */
     }
 
     .headliner {
@@ -78,10 +65,6 @@
 
     .interests {
         font-size: 1.2rem;
-    }
-
-    .photo {
-        width: 200px;
     }
 }
 
