@@ -1,8 +1,19 @@
 .about-container {
     color: white;
     padding: 2rem;
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll; /* Added */
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow-y: scroll; /* Added */
 }
 
 .about-title {
@@ -10,13 +21,6 @@
     margin-bottom: 2rem;
     color: #fff;
 }
-
-.about-content {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
 .about-text {
     font-size: 1.65rem;
     line-height: 1.6;
@@ -24,6 +28,7 @@
 
 .skills-section {
     margin-top: 2rem;
+    margin-bottom: 0; /* Added */
 }
 
 .skills-section h2 {
@@ -88,6 +93,7 @@
 
 .projects-section {
     margin-top: 1rem;
+    margin-bottom: 0; /* Added */
 }
 
 .projects-section h2 {

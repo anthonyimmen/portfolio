@@ -101,7 +101,16 @@ const About = () => {
                     Building things...
                 </p>
                  <div className="projects-section">
-                    <h2>projects</h2>
+                    <h2>
+                        <Typewriter
+                            onInit={(typewriter) => {
+                                typewriter
+                                    .start()
+                                    .typeString("projects")
+                                    .pauseFor(1000)
+                            }}
+                        />
+                    </h2>
                     <div className="projects-grid">
                         {projects.map(project => (
                             <div 
@@ -123,7 +132,16 @@ const About = () => {
                     </div>
                 </div>
                 <div className="skills-section">
-                    <h2>tech</h2>
+                    <h2>
+                        <Typewriter
+                            onInit={(typewriter) => {
+                                typewriter
+                                    .start()
+                                    .typeString("tech")
+                                    .pauseFor(1000)
+                            }}
+                        />
+                    </h2>
                     <div className="skills-grid">
                         {skills.map((skill) => (
                             <div key={skill.name} className="skill-item">

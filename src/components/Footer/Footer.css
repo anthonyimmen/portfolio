@@ -1,9 +1,7 @@
 .Footer {
     /* Remove position: fixed */
     width: 100%;
-    height: auto;
     padding-top: 30px;
-    padding-bottom: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
