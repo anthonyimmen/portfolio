@@ -2,28 +2,9 @@ import { useState } from 'react';
 import './Chat.css';
 import Typewriter from "typewriter-effect";
 import sendIcon from './send.svg';
-import { GoogleGenAI } from "@google/genai";
 import BreathingCircle from './BreathingCircle.tsx';
 
-// TODO: add serverless functions to protect your api
-
-const GEMINI_API_KEY = process.env.REACT_APP_GEMINI_API_KEY;
-
-const ai = new GoogleGenAI({ apiKey: GEMINI_API_KEY });
 const startingPrompt = "You are responding as Anthony Immenschuh, a 23-year-old software engineer at JPMorganChase working on an AI/ML-focused team that owns and maintains backend services. He has extensive full-stack development experience, specializing in React, TypeScript, Express.js, and AWS services like EC2, S3, IAM, and Systems Manager. Anthony has led impactful projects such as reducing fraud losses by millions contributing the team's initiative of modernizing their fraud-check services, building real-time React verification hooks, and automating internal testing frameworks with 100% code coverage, earning a top 5% ranking among engineers and an early promotion. He is practical, highly focused on efficiency and results both in code and life. Anthony built a minimalist productivity app called goal that helps users focus on one meaningful task per day, featuring streak tracking and motivational quotes. He is passionate about UI/UX design, favoring clean, minimal, and intentional interfaces that remove distractions and guide users with clear purpose. Outside of work, Anthony is dedicated to fitness, regularly lifting weights and running while tracking his progress closely. He is a coffee enthusiast, especially fond of 1418 Coffee in downtown Plano, and stays current with the latest technology trends, particularly Apple product releases and AI advancements. Sound like a human and give regular conversation like responses. Make your response sound confident, knowledgeable, humble, and friendly. your responses should be around 2-3 sentences long. never use emojis. do not mention his age. sound like a 23 year old guy.";
-const chat = ai.chats.create({
-        model: "gemini-2.5-flash",
-        history: [
-            {
-                role: "user",
-                parts: [{ text: "Hello" }],
-            },
-            {
-                role: "model",
-                parts: [{ text: startingPrompt}],
-            },
-        ],
-    });
 
 const Chat = () => {
 
@@ -35,6 +16,12 @@ const Chat = () => {
         return `${hours}:${minutes}${ampm}`;
     };
 
+    const [history, setHistory] = useState([
+        {
+            role: "user",
+            parts: [{text: startingPrompt}]
+        }
+    ]);
     const [messages, setMessages] = useState([
         {
             messageText: "hey i'm gemini 2.0 flash trained to act like anthony. ask me anything about my projects, technologies, coffee, art, music, etc...",
@@ -53,7 +40,9 @@ const Chat = () => {
             messageDate: getTimeString()
         };
         setMessages(prev => [...prev, userMessage]);
+        setHistory(prev => [...prev, { role: "user", parts: [{text:inputValue}]}]);
         setInputValue('');
+
         setLoading(true);
         const loadingMessage = {
                 messageText: "LOADING_ICON_GOES_HERE",
@@ -63,20 +52,29 @@ const Chat = () => {
         setMessages(prev => [...prev, loadingMessage]);
 
         try {
-            const response = await chat.sendMessage({
-                message: inputValue,
+            const response = await fetch("https://sonpwzdh72.execute-api.us-east-2.amazonaws.com/chat", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    history: history, // full array
+                    message: inputValue,  // new user input
+                }),
             });
+            const data = await response.json();
             const botMessage = {
-                messageText: response.text ? response.text : "Sorry, I couldn't get a response from Gemini. Please try again later.",
+                messageText: data.reply ? data.reply : "Sorry, I couldn't get a response from Gemini. Please try again later.",
                 messageAuthor: "anthony-bot",
                 messageDate: getTimeString()
             };
             // Remove loading message
             setMessages(prev => prev.filter(msg => msg.messageText !== "LOADING_ICON_GOES_HERE"));
             setMessages(prev => [...prev, botMessage]);
+            setHistory(prev => [...prev, { role: "model", parts: [{text:data.reply}] }]);
         } catch (err) {
             // Remove loading message
             setMessages(prev => prev.filter(msg => msg.messageText !== "LOADING_ICON_GOES_HERE"));
+            setHistory(prev => prev.slice(0, -1));
+            // Add error message
             setMessages(prev => [
                 ...prev,
                 {
