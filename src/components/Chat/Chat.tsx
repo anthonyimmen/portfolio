@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import './Chat.css';
 import Typewriter from "typewriter-effect";
 import sendIcon from './send.svg';
@@ -31,6 +31,12 @@ const Chat = () => {
     ]);
     const [inputValue, setInputValue] = useState('');
     const [loading, setLoading] = useState(false);
+
+    const messagesEndRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    }, [messages]);
 
     const handleSend = async () => {
         if (inputValue.trim() === '' || loading) return;
@@ -120,6 +126,7 @@ const Chat = () => {
                             }
                         </div>
                     ))}
+                    <div ref={messagesEndRef} />
                 </div>
                 <div className="chat-input-container">
                     <input 
