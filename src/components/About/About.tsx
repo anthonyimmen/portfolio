@@ -40,7 +40,7 @@ const About = () => {
             id: 2,
             title: "Portfolio",
             shortDescription: "My personal portfolio built with React.",
-            longDescription: "A modern, responsive portfolio website built using React and Javascript. Features include dynamic routing, analytics, animated components, and responsive design.",
+            longDescription: "A modern, responsive portfolio website built using React and Javascript. Features include Google Gemini integration, dynamic routing, analytics, animated components, and responsive design.",
             technologies: ["React", "TypeScript", "CSS", "Vercel", "Figma"],
             image: "/portfolio-icon.png",
             githubLink: "https://github.com/anthonyimmen/portfolio",
@@ -102,14 +102,7 @@ const About = () => {
                 </p>
                  <div className="projects-section">
                     <h2>
-                        <Typewriter
-                            onInit={(typewriter) => {
-                                typewriter
-                                    .start()
-                                    .typeString("projects")
-                                    .pauseFor(1000)
-                            }}
-                        />
+                        projects
                     </h2>
                     <div className="projects-grid">
                         {projects.map(project => (
@@ -133,14 +126,7 @@ const About = () => {
                 </div>
                 <div className="skills-section">
                     <h2>
-                        <Typewriter
-                            onInit={(typewriter) => {
-                                typewriter
-                                    .start()
-                                    .typeString("tech")
-                                    .pauseFor(1000)
-                            }}
-                        />
+                        tech
                     </h2>
                     <div className="skills-grid">
                         {skills.map((skill) => (
