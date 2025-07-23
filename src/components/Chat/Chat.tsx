@@ -24,7 +24,7 @@ const Chat = () => {
     ]);
     const [messages, setMessages] = useState([
         {
-            messageText: "hey i'm gemini 2.0 flash trained to act like anthony. ask me anything about my projects, technologies, coffee, art, music, etc...",
+            messageText: "hey i'm gemini 2.5 flash trained to act like anthony. ask me anything about my projects, technologies, coffee, art, music, etc...",
             messageAuthor: "anthony-bot",
             messageDate: `${getTimeString()}`
         }
