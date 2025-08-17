@@ -27,6 +27,16 @@ const About = () => {
     const projects: Project[] = [
         {
             id: 1,
+            title: "ascii-it",
+            shortDescription: "Just ascii it. Convert any image to ascii art.",
+            longDescription: "Ascii-It is a more aesthetic version of a traditional image to ascii website. Includes color, density, contrast, zoom, background color, and character type adjustments, as well as 'X/Twitter' banner crop. Features coming soon are a gallery for the most recently convert images (with safety measures using AWS Rekognition) and user login. ",
+            technologies: ["React", "TypeScript", "Java", "Springboot", "SQL", "MongoDB", "CSS", "Figma", "UI/UX"],
+            image: "/ascii-it-logo.jpeg",
+            githubLink: "https://www.github.com/anthonyimmen/ascii-it",
+            websiteLink: "https://www.ascii-it.com"
+        },
+        {
+            id: 2,
             title: "goal.",
             shortDescription: "Goal is a productivity app that is meant to improve your day-to-day life and help you reach your goals.",
             longDescription: "Goal enables users to intentionally create to-do lists limited to their most important daily task. Includes a custom authentication service, profile page, a motivational quote display, a list of completed goals, and a GitHub-like daily tracker.",
@@ -37,7 +47,7 @@ const About = () => {
             websiteLink: "https://www.goalapp.io"
         },
         {
-            id: 2,
+            id: 3,
             title: "Portfolio",
             shortDescription: "My personal portfolio built with React.",
             longDescription: "A modern, responsive portfolio website built using React and Javascript. Features include Google Gemini integration with memory using AWS Lambda, dynamic routing, analytics, animated components, and responsive design.",
@@ -47,7 +57,7 @@ const About = () => {
             websiteLink: "https://www.anthonyimmenschuh.com"
         },
         {
-            id: 3,
+            id: 4,
             title: "Airbnb Clone",
             shortDescription: "A clone of the Airbnb application.",
             longDescription: "A modern, responsive portfolio website built using React and Javascript. Features include dynamic routing, animated components, and responsive design.",
