@@ -29,8 +29,8 @@ const About = () => {
             id: 1,
             title: "ascii-it",
             shortDescription: "Just ascii it. Convert any image to ascii art.",
-            longDescription: "Ascii-It is a more aesthetic version of a traditional image to ascii website. Includes color, density, contrast, zoom, background color, and character type adjustments, as well as 'X/Twitter' banner crop. Features coming soon are a gallery for the most recently convert images (with safety measures using AWS Rekognition) and user login. ",
-            technologies: ["React", "TypeScript", "Java", "Springboot", "SQL", "MongoDB", "CSS", "Figma", "UI/UX"],
+            longDescription: "Ascii-It is a more aesthetic version of a traditional image to ascii website. Includes color, density, contrast, zoom, background color, and character type adjustments, as well as 'X/Twitter' banner crop. Features coming soon are a gallery for the most recently convert images (with safety measures using AWS Rekognition) and user login.",
+            technologies: ["React", "TypeScript", "Javascript", "Express.js", "SQL", "MongoDB", "CSS", "Figma", "UI/UX"],
             image: "/ascii-it-logo.jpeg",
             githubLink: "https://www.github.com/anthonyimmen/ascii-it",
             websiteLink: "https://www.ascii-it.com"
