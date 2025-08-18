@@ -126,6 +126,9 @@ const About = () => {
                                         src={project.image} 
                                         alt={project.title}
                                         className="project-image-preview"
+                                        style={{
+                                            padding: project.title == "Airbnb Clone" ? 4 : 0
+                                        }}
                                     />
                                     <h4>{project.title}</h4>
                                 </div>
