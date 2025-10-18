@@ -30,8 +30,8 @@ const About = () => {
             title: "ascii-it",
             shortDescription: "Just ascii it. Convert any image to ascii art.",
             longDescription: "Ascii-It is a more aesthetic version of a traditional image to ascii website. Includes color, density, contrast, zoom, background color, and character type adjustments, as well as 'X/Twitter' banner crop. Features coming soon are a gallery for the most recently convert images (with safety measures using AWS Rekognition) and user login.",
-            technologies: ["React", "TypeScript", "Javascript", "Express.js", "SQL", "MongoDB", "CSS", "Figma", "UI/UX"],
-            image: "/ascii-it-logo.jpeg",
+            technologies: ["React", "TypeScript", "Javascript", "Next.js", "Vercel", "CSS", "Figma", "UI/UX"],
+            image: "/ascii-it-logo.png",
             githubLink: "https://www.github.com/anthonyimmen/ascii-it",
             websiteLink: "https://www.ascii-it.com"
         },
@@ -127,7 +127,7 @@ const About = () => {
                                         alt={project.title}
                                         className="project-image-preview"
                                         style={{
-                                            padding: project.title == "Airbnb Clone" ? 4 : 0
+                                            padding: project.title === "Airbnb Clone" ? 4 : 0
                                         }}
                                     />
                                     <h4>{project.title}</h4>
